@@ -49,7 +49,7 @@ This repository is created by [Matuco19](https://github.com/Matuco19). See more 
 
 ## 👋 Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+Contributions are welcome! Please submit a Pull Request or open an Issue.
 
 ## 🧻 License
 
