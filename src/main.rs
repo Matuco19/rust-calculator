@@ -5,7 +5,7 @@ fn main() {
         let mut input = String::new();
         print!("Calculate ('quit' to exit): ");
         io::stdout().flush().unwrap();
-        io::stdin().read_line(&mut input).expect("error unnable to read user input");
+        io::stdin().read_line(&mut input).expect("error unable to read user input");
 
         let input = input.trim();
         if input.eq_ignore_ascii_case("quit") {
@@ -20,6 +20,12 @@ fn main() {
         for c in input.chars() {
             if c.is_digit(10) || c == '.' {
                 num.push(c);
+            } else if c == '%' {
+                if !num.is_empty() {
+                    let value = num.parse::<f64>().unwrap() / 100.0;
+                    numbers.push(value);
+                    num.clear();
+                }
             } else {
                 if !num.is_empty() {
                     numbers.push(num.parse::<f64>().unwrap());
@@ -28,6 +34,7 @@ fn main() {
                 operators.push(c);
             }
         }
+
         if !num.is_empty() {
             numbers.push(num.parse::<f64>().unwrap());
         }
